@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5549ab2bd4b406f600c398117097d273",
+    "entities": [
+      {
+        "tableName": "fruits",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fruit_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fruit_name` TEXT NOT NULL, `fruit_price` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "fruitID",
+            "columnName": "fruit_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fruitName",
+            "columnName": "fruit_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fruitPrice",
+            "columnName": "fruit_price",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "fruit_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5549ab2bd4b406f600c398117097d273')"
+    ]
+  }
+}
